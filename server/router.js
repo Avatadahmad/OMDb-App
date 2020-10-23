@@ -1,12 +1,12 @@
 const express = require('express');
 const fetch = require('node-fetch');
-
+const API_KEY = "52ab89f7";
 
 let router = express.Router();
 
 router.get('/:movie',(req,res)=>{
     const movie = req.params.movie
-    const url = `http://www.omdbapi.com/?s=${movie}&apikey=52ab89f7`;
+    const url = `http://www.omdbapi.com/?s=${movie}&apikey=${API_KEY}`;
     console.log(url)
     fetch(url)
         .then(response =>response.json())

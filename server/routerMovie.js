@@ -3,11 +3,11 @@ const fetch = require('node-fetch');
 
 
 let router = express.Router();
-
+const API_KEY = "52ab89f7"
 router.get('/:x',(req,res)=>{
     const movie_id = req.params.x
-    const url = `http://www.omdbapi.com/?i=${movie_id}&apikey=52ab89f7`;
-    console.log(url)
+    const url = `http://www.omdbapi.com/?i=${movie_id}&apikey=${API_KEY}`;
+    
     fetch(url)
         .then(response =>response.json())
         .then(data =>{
