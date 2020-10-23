@@ -1,0 +1,3 @@
+GET http://localhost:5000/moviesearch/tt3896198
+
+Content-Type: application/json 
