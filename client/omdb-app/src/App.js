@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 
 import axios from "axios";
-import { useHistory } from "react-router-dom";
-import { Router } from 'react-router';
 
 class App extends React.Component {
 
@@ -20,8 +18,8 @@ class App extends React.Component {
 
   search = event => {
       event.preventDefault();
-      // this.history.push(`/${event.target.value}`)
-      this.props.history.push(`/${event.target.value}`);
+     
+      
       axios
           .get(
               `http://localhost:5000/moviesearch/${
@@ -60,9 +58,7 @@ class App extends React.Component {
                       placeholder="Search for a movie"
                       onChange={this.handleChange}
                   />
-                  <button className="search-button">
-                      <i className="fas fa-search" />
-                      </button>
+                  
                   
               </div>
               
