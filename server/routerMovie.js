@@ -12,7 +12,6 @@ router.get('/:movieName',(req,res)=>{
     fetch(url)
         .then(response =>response.json())
         .then(data =>{
-            console.log("data:",data);
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.send(data)   
         })
