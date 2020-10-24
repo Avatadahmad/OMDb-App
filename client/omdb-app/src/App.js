@@ -56,7 +56,7 @@ class App extends React.Component {
               <form onSubmit={this.search}>
               <div className="search-box">
                   <input className="search-input"
-                      placeholder="Search for a movie"
+                      placeholder="Search for Movie!!"
                       onChange={this.handleChange}
                   />   
               </div>
@@ -68,8 +68,7 @@ class App extends React.Component {
                   ))
               ) : (
                   <p>
-                      Couldn't find any movie. Please search again using
-                      another search criteria.
+                      You missed something!, Couldn't find your movie.
                   </p>
               )}
           </div>
@@ -116,7 +115,7 @@ class MovieCard extends React.Component {
 
       return (
          
-          <div className="movie-card-container">
+          <div className="movie-container">
               <div className="image-container">
                   <div
                       className="bg-image"
@@ -124,7 +123,7 @@ class MovieCard extends React.Component {
                   />
               </div>
 
-              <div className="movie-info">
+              <div className="movie-details">
                   <h2>Movie Details</h2>
 
                   <div>

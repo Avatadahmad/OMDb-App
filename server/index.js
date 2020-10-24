@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const router = require('./router');
 //routerMovie file to fetch the single movie based on imdbID
 const new_router = require('./routerMovie');
-const PORT = 5000;
+
 const app = express();
 
 
@@ -16,8 +16,13 @@ app.use("/moviesearch/",router);
 app.use("/moviesearch/movielist/",new_router);
 app.use(express.static('public'));
 
+app.get("/", (req, res) => {
+    res.json({ status: "success", message: "Welcome To Testing API" });
+  });
 
 //Listen to port
-app.listen(PORT,'127.0.0.1',() =>{
-    console.log("Server is connecting");
-})
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
+
+module.exports = app;
