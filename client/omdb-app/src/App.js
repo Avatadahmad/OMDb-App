@@ -100,7 +100,7 @@ class MovieCard extends React.Component {
   }
 // Render the movie data to webpage
   render() {
-      const {
+      var {
           Title,
           Released,
           Genre,
@@ -110,7 +110,7 @@ class MovieCard extends React.Component {
       } = this.state.movieData;
 // If no poster is present, nothing will be displayed
       if (!Poster || Poster === 'N/A') {
-          return null;
+          Poster='https://placehold.it/198x264&text=Image+Not+Found';
       }
 
       return (
