@@ -1,13 +1,14 @@
 const express = require('express');
 const fetch = require('node-fetch');
-
-
-let router = express.Router();
+const router = express.Router();
 const API_KEY = "52ab89f7";
-router.get('/:x',(req,res)=>{
-    const movie_id = req.params.x
+
+
+router.get('/:movieName',(req,res)=>{
+    const movie_id = req.params.movieName
     const url = `http://www.omdbapi.com/?i=${movie_id}&apikey=${API_KEY}`;
-    
+    //fetch call to get data from omdb api
+    //fetch to get the individual movie based on imdb_id
     fetch(url)
         .then(response =>response.json())
         .then(data =>{
@@ -22,4 +23,5 @@ router.get('/:x',(req,res)=>{
             console.log(err);
         })       
 })
+//Export the module
 module.exports = router;
