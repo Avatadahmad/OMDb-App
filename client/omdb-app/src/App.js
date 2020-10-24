@@ -47,6 +47,11 @@ class App extends React.Component {
       //Return movie list 
       return (
           //Search Button
+          <div>
+             <div>
+                 <h1 id="search-id">OMDb</h1>
+              </div>
+             
               <div>
               <form onSubmit={this.search}>
               <div className="search-box">
@@ -68,16 +73,18 @@ class App extends React.Component {
                   </p>
               )}
           </div>
+          </div>
       );
   }
 }
 
-
+//Class to display movie individually
 class MovieCard extends React.Component {
   state = {
       movieData: {}
   };
   componentDidMount() {
+      //to get movie details from backend based on the imdbID
       axios
           .get(
             `http://localhost:5000/moviesearch/movielist/${
@@ -88,11 +95,11 @@ class MovieCard extends React.Component {
               this.setState({ movieData: res });
           });
   }
-
+ // Navigate to imdb page of the movie
   viewMovie() {
     window.open("http://www.imdb.com/find?s=tt&q=" + this.props.movieID,"_blank")
   }
-
+// Render the movie data to webpage
   render() {
       const {
           Title,
@@ -102,13 +109,13 @@ class MovieCard extends React.Component {
           Poster,
           imdbRating
       } = this.state.movieData;
-
+// If no poster is present, nothing will be displayed
       if (!Poster || Poster === 'N/A') {
           return null;
       }
 
       return (
-        
+         
           <div className="movie-card-container">
               <div className="image-container">
                   <div
@@ -136,6 +143,7 @@ class MovieCard extends React.Component {
                   </div>
               </div>
           </div>
+          
       );
   }
 }
