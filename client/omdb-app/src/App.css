@@ -87,7 +87,7 @@ form button:active {
 }
 
 .movie-details {
-    color:#FCF3CF;
+    color:#2ECC71;
     display: flex;
     flex: 3;
     flex-direction: column;
@@ -217,7 +217,7 @@ footer a {
  margin-bottom: 0%;
  font-size: 70px;
  display: block;
- color: #21618C;
+ color: #2ECC71 ;
  text-align: center;
  
  
