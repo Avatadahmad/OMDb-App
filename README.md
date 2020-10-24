@@ -1,6 +1,9 @@
 # OMDb-App
 
 
+
+
+
 OMDb-App is a single page application,it is built on Node js and React js.This app lets you find a movie based on the search.
 
 
@@ -20,6 +23,7 @@ OMDb-App is a single page application,it is built on Node js and React js.This a
   - axios
   - mocha
   - chai
+  - chai-http
 
 # Instructions
 
@@ -29,6 +33,9 @@ OMDb-App is a single page application,it is built on Node js and React js.This a
   - If your backend server is running successfully, navigate back to project with "cd .."
   - Now navigate to client folder.In client go to omdb-app(cd omdb-app) and run "npm start"
   - Here you go! Now search for movie
+  - to run test cases, install chai and chai-http in "server folder". Run this commond :npm i mocha chai chai-http --save-dev
+  - run test file with npm test (make sure you close backend server, otherwise it will throw error)
+
 
 
 # Tech-Stack
